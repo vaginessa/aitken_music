@@ -14,7 +14,7 @@ const CountryTracks = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`https://geo.ipify.org/api/v2/country?apiKey=at_9zVsoJIyqNODNo5ojRiTBKLZ0hOX7`)
+    //     axios.get(`https://geo.ipify.org/api/v2/country?apiKey={USE_API_KEY}`)
     //         .then((res) => setCountry(res?.data?.location?.country))
     //         .catch((err) => console.log(err))
     //         .finally(() => setLoading(false));
