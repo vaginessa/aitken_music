@@ -42,7 +42,10 @@ const Sidebar = () => {
       </div>
 
       <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-white/10 to-[#000000] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
-        <img src={logo} alt='logo' className='w-full h-14 object-contain' />
+        <div className='flex items-center'>
+          <img src={logo} alt='logo' className='w-10 h-10 object-contain' />
+          <h1 className='text-[#FF8A00] font-black text-[22px] ml-3'>AITKEN<span className='text-white'>MUSIC</span></h1>
+        </div>
         <NavLinks handleClick={() => setMobileMenuOpen(false)}/>
       </div>
     </>
