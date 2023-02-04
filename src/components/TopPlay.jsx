@@ -19,16 +19,30 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
   <div className="w-full flex flex-row items-center hover:bg-[#000000] py-2 p-4 rounded-lg cursor-pointer mb-2">
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
-      <Link to={`/songs/${song.key}`}>
-        <img src={song.images ? song.images?.coverart : noCoverArt} alt={song?.title} className="w-20 h-20 rounded-lg" />
-      </Link>
-      <div className="flex-1 flex flex-col justify-center mx-3">
+      {song.hub.actions ? (
         <Link to={`/songs/${song.key}`}>
-          <p className="text-xl font-bold text-white hover:text-[#FF8A00]">{song?.title}</p>
+          <img src={song.images ? song.images?.coverart : noCoverArt} alt={song?.title} className="w-20 h-20 rounded-lg" />
         </Link>
-        <Link to={song.artists ? `/artists/${song?.artists[0].adamid}` : '#'}>
-          <p className="text-base text-gray-300 mt-1 hover:text-[#5C5C5C]">{song?.subtitle}</p>
-        </Link>
+      ) : (
+        <img src={song.images ? song.images?.coverart : noCoverArt} alt={song?.title} className="w-20 h-20 rounded-lg cursor-default" />
+      )}
+      <div className="flex-1 flex flex-col justify-center mx-3">
+        {song.hub.actions ? (
+          <Link to={`/songs/${song.key}`}>
+            <p className="text-xl font-bold text-white hover:text-[#FF8A00]">{song?.title}</p>
+          </Link>
+        ): (
+          <p className="text-xl font-bold text-white cursor-default">{song?.title}</p>
+        )}
+        
+        {song.artists ? (
+          <Link to={song.artists ? `/artists/${song?.artists[0].adamid}` : '#'}>
+            <p className="text-base text-gray-300 mt-1 hover:text-[#5C5C5C]">{song?.subtitle}</p>
+          </Link>
+        ) : (
+          <p className="text-base text-gray-300 mt-1 cursor-default">{song?.subtitle}</p>
+        )}
+        
       </div>
     </div>
     <PlayPause 

@@ -30,7 +30,7 @@ const Sidebar = () => {
       <div className='md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#000000]'>
         <div className='flex items-center'>
           <img src={logo} alt='logo' className='w-full h-10 object-contain' />
-          <h1 className='text-[#FF8A00] font-black text-[22px] ml-1'>AITKENMUSIC</h1>
+          <h1 className='text-[#FF8A00] font-black text-[22px] ml-1'>AITKEN<span className='text-white'>MUSIC</span></h1>
         </div>
         <NavLinks />
       </div>

@@ -1,6 +1,6 @@
 import loader from './loader.svg';
 import logo from './logo.png';
-import noCoverArt from './nocoverart.jpg'
+import noCoverArt from './nocoverart.png'
 import noArtistArt from './noartist.jpg'
 
 
