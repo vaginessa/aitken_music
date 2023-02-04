@@ -16,16 +16,18 @@ import 'swiper/css/free-mode';
 
 
 const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
-  <div className="w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
+  <div className="w-full flex flex-row items-center hover:bg-[#000000] py-2 p-4 rounded-lg cursor-pointer mb-2">
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
-      <img src={song.images ? song.images?.coverart : noCoverArt} alt={song?.title} className="w-20 h-20 rounded-lg" />
+      <Link to={`/songs/${song.key}`}>
+        <img src={song.images ? song.images?.coverart : noCoverArt} alt={song?.title} className="w-20 h-20 rounded-lg" />
+      </Link>
       <div className="flex-1 flex flex-col justify-center mx-3">
         <Link to={`/songs/${song.key}`}>
-          <p className="text-xl font-bold text-white">{song?.title}</p>
+          <p className="text-xl font-bold text-white hover:text-[#FF8A00]">{song?.title}</p>
         </Link>
         <Link to={song.artists ? `/artists/${song?.artists[0].adamid}` : '#'}>
-          <p className="text-base text-gray-300 mt-1">{song?.subtitle}</p>
+          <p className="text-base text-gray-300 mt-1 hover:text-[#5C5C5C]">{song?.subtitle}</p>
         </Link>
       </div>
     </div>
@@ -66,7 +68,7 @@ const TopPlay = () => {
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Top Charts</h2>
           <Link to="/top-charts">
-            <p className="text-gray-300 text-base cursor=pointer">See more</p>
+            <p className="text-gray-300 text-base cursor=pointer hover:text-[#FF8A00]">See more</p>
           </Link>
         </div>
 
@@ -89,7 +91,7 @@ const TopPlay = () => {
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Top Artists</h2>
           <Link to="/top-artists">
-            <p className="text-gray-300 text-base cursor=pointer">See more</p>
+            <p className="text-gray-300 text-base cursor=pointer hover:text-[#FF8A00]">See more</p>
           </Link>
         </div>
 
@@ -108,8 +110,13 @@ const TopPlay = () => {
               style={{ width: '25%', height: 'auto' }}
               className="shadow-lg rounded-full animate-slideright"
             >
-              <Link to={song.artists ? `/artists/${song?.artists[0].adamid}` : '#'} >
-                <img src={song.images ? song?.images.background : noArtistArt} alt="name" className="rounded-full w-full object-cover" />
+              <Link to={song.artists ? `/artists/${song?.artists[0].adamid}` : '#'}>
+                <div className='relative w-full group'>
+                  <div className={`absolute inset-0 justify-center items-center bg-[#000000] hover:bg-opacity-50 bg-opacity-0 flex`}>
+                    <p className="text-base group-hover:text-gray-100 text-transparent mt-1 xt truncate p-3">{song?.subtitle}</p>
+                  </div>
+                  <img src={song.images ? song?.images.background : noArtistArt} alt="name" className="rounded-full w-full object-cover" />
+                </div>
               </Link>
             </SwiperSlide>
           ))}
