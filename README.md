@@ -3,6 +3,8 @@ Aitken Music is a Spotify clone web app that allows users to play snippets of po
 
 The live version of the app can be found [HERE](https://music.michaelaitken.com).
 
+*Note: I'm in the process of commenting my code to make it more readable*
+
 ## Getting Started
 These instructions will help you set up the project on your local machine.
 
