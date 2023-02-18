@@ -1,5 +1,7 @@
 # Aitken Music
-Aitken Music is a Spotify clone web app that allows users to play snippets of popular songs, search for songs and artists, and see the top charts for specific genres. The app is mobile-friendly and uses React.js, Vite, Tailwind, Redux and RapidAPI. The app uses the ShazamCore API from RapidAPI to gather all the song and artist information. Created to become more familiar with Redux and RapidAPI. The live version of the app can be found [HERE](https://music.michaelaitken.com).
+Aitken Music is a Spotify clone web app that allows users to play snippets of popular songs, search for songs and artists, and see the top charts for specific genres. The app is mobile-friendly and uses React.js, Vite, Tailwind, Redux and RapidAPI. The app uses the ShazamCore API from RapidAPI to gather all the song and artist information. Created to become more familiar with Redux and RapidAPI. 
+
+The live version of the app can be found [HERE](https://music.michaelaitken.com).
 
 ## Getting Started
 These instructions will help you set up the project on your local machine.
@@ -46,7 +48,8 @@ Open your web browser and navigate to http://localhost:3000 to view the app.
 
 ## Acknowledgments
 This project was created during a course by [JavaScript Mastery](https://www.youtube.com/@javascriptmastery) but has been heavily modified. Changes I made:
-- I have changed the UI to be mobile friendly.
-- Implemented the updated API.
+- Completely overhauled the UI.
+- Added mobile friendly components to improve UX.
+- Implemented the updated ShazamCore API. (Old Version is broken)
 - Updated dependencies to their current versions.
 - Fixed a **LOT** of bugs.
